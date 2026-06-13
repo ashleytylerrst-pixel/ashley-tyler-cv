@@ -119,7 +119,7 @@
     border-bottom: 1px solid var(--border);
   }
   .hero-messages {
-    height: 220px; overflow-y: auto; padding: 1rem; display: flex; flex-direction: column; gap: 0.8rem;
+    height: 340px; overflow-y: auto; padding: 1rem; display: flex; flex-direction: column; gap: 0.8rem;
   }
   .hero-messages::-webkit-scrollbar { width: 3px; }
   .hero-messages::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
@@ -245,6 +245,7 @@
   .suggestion-chip { font-size: 0.77rem; padding: 0.3rem 0.8rem; border: 1px solid var(--border); border-radius: 980px; background: var(--bg); color: var(--muted); cursor: pointer; transition: all 0.18s; font-family: var(--font); }
   .suggestion-chip:hover { border-color: var(--text); color: var(--text); }
   .msg-suggestions { display: flex; flex-wrap: wrap; gap: 0.4rem; padding: 0 0 0.4rem 2rem; }
+  .type-cursor { display: inline-block; font-weight: 300; color: var(--muted); animation: blink 0.8s infinite; margin-left: 1px; }
   .msg-chip { font-size: 0.74rem; }
 
   /* EDUCATION */
@@ -831,9 +832,9 @@ function sendMessage() {
   const result = findAnswer(text);
   setTimeout(() => {
     typing.remove();
-    addMsg('ash', result.text, result.follow);
+    addMsgTyped('ash', result.text, result.follow);
     btn.disabled = false;
-  }, 120 + Math.random() * 80);
+  }, 500 + Math.random() * 300);
 }
 
 
@@ -860,6 +861,47 @@ function addMsg(who, text, suggestions) {
     msgs.appendChild(sf);
   }
   msgs.scrollTop = msgs.scrollHeight;
+  return d;
+}
+
+function addMsgTyped(who, text, suggestions) {
+  const msgs = document.getElementById('chat-messages');
+  const d = document.createElement('div');
+  d.className = 'msg';
+  d.innerHTML = '<div class="msg-avatar"><img src="' + ASHLEY_PHOTO + '" style="width:100%;height:100%;object-fit:cover;border-radius:50%;"></div><div class="msg-bubble"><span class="typed-text"></span><span class="type-cursor">|</span></div>';
+  msgs.appendChild(d);
+  msgs.scrollTop = msgs.scrollHeight;
+
+  const span = d.querySelector('.typed-text');
+  const cursor = d.querySelector('.type-cursor');
+  let i = 0;
+  const speed = 18;
+
+  function typeChar() {
+    if (i < text.length) {
+      span.textContent += text[i];
+      i++;
+      msgs.scrollTop = msgs.scrollHeight;
+      setTimeout(typeChar, speed);
+    } else {
+      cursor.remove();
+      // Show follow-up suggestions after typing completes
+      if (suggestions && suggestions.length) {
+        const sf = document.createElement('div');
+        sf.className = 'msg-suggestions';
+        suggestions.forEach(s => {
+          const b = document.createElement('button');
+          b.className = 'suggestion-chip msg-chip';
+          b.textContent = s;
+          b.onclick = () => { document.getElementById('chat-input').value = s; sendMessage(); sf.remove(); };
+          sf.appendChild(b);
+        });
+        msgs.appendChild(sf);
+        msgs.scrollTop = msgs.scrollHeight;
+      }
+    }
+  }
+  typeChar();
   return d;
 }
 
