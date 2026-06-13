@@ -703,9 +703,9 @@ function toggleTimeline(item) {
 // PRE-LOADED QA ENGINE
 const qa = [
   {
-    keys: ['buildos', 'build os', 'operating system', 'notion', 'platform', 'system you built'],
+    keys: ['buildos', 'build os', 'operating system', 'platform', 'system you built'],
     answer: "BuildOS is an operating system I designed and built from scratch for the global Design and Construction function at IWG. It brought programme governance, initiative tracking, performance management, and delivery oversight into one centralised platform spanning 120+ markets. The goal was simple - give a globally distributed team one source of truth so decisions get made faster and nothing falls through the cracks.",
-    follow: ['How did you build it?', 'What impact did it have?', 'What tools do you use?']
+    follow: ['How did you build it?', 'What impact did it have?', 'What are you most proud of?']
   },
   {
     keys: ['how did you build', 'built it', 'technically', 'tech stack', 'how was it made'],
@@ -718,8 +718,8 @@ const qa = [
     follow: ['Tell me about the AI strategy', 'What does your day to day look like?', 'What are you looking for next?']
   },
   {
-    keys: ['ai', 'artificial intelligence', 'copilot', 'chatgpt', 'claude', 'automation', 'llm', 'machine learning'],
-    answer: "I defined and led the AI strategy for the global D&C function at IWG - not just selecting tools but redesigning workflows around them. I embedded Microsoft Copilot, Claude, ChatGPT Enterprise, and AI-augmented design and document platforms into core delivery processes. The focus was always on measurable output - we tracked efficiency gains rigorously and used that data to prioritise where AI added real value versus where it was just noise.",
+    keys: ['ai', 'artificial intelligence', 'chatgpt', 'claude', 'automation', 'llm', 'machine learning', 'ai strategy'],
+    answer: "I defined and led the AI strategy for the global D&C function at IWG, built around a four-phase maturity model I designed: Knowledge and Context, Assist, Automate, and Orchestrate - each staged against the team's foundations readiness. Notion was the central platform, providing the knowledge layer and operating infrastructure that the AI tools sat on top of. From there we layered in Claude and ChatGPT to assist designers, project managers, estimators, and procurement teams - before moving into agentic workflow automation. The focus was always on sequencing it properly: you can't automate what you haven't first documented and standardised.",
     follow: ['What efficiency gains did you see?', 'How do you approach change management?', 'What tools do you use?']
   },
   {
@@ -728,8 +728,8 @@ const qa = [
     follow: ['Tell me about BuildOS', 'How do you approach AI adoption?', 'What are you looking for next?']
   },
   {
-    keys: ['approach', 'methodology', 'how do you', 'philosophy', 'thinking', 'framework'],
-    answer: "I start with diagnosis before prescription. Most operating model problems look like execution failures but are actually structural - unclear ownership, misaligned incentives, or systems that don't reflect how work actually flows. I map the current state in detail, identify the root causes, then design the future state with the people who'll live in it. The playbook only comes after you understand the problem.",
+    keys: ['approach', 'methodology', 'how do you', 'philosophy', 'thinking', 'framework', '7ps', 'seven ps', 'discovery'],
+    answer: "I use the 7Ps as my foundation for discovery - People, Product, Process, Platform, Partnership, Prices, and Performance. Working through each one gives you a structured way to surface what's actually broken rather than what looks broken on the surface. Most operating model problems present as execution failures but are structural underneath - the wrong ownership, misaligned incentives, platforms that don't reflect how work actually flows. Once I've mapped the gaps properly across all seven dimensions I design the fixes and sequence the implementation. The playbook only comes after you understand the problem.",
     follow: ['Tell me about a specific example', 'What does good governance look like?', 'What are you looking for next?']
   },
   {
@@ -738,13 +738,13 @@ const qa = [
     follow: ['Tell me about your dashboard work', 'What tools do you use?', 'What are you looking for next?']
   },
   {
-    keys: ['change', 'adoption', 'people', 'resistance', 'rollout', 'embed', 'culture'],
-    answer: "Change fails when it's done to people rather than with them. I involve the teams who'll be affected early - not just for buy-in but because they hold the real process knowledge. I also try to show value fast: a small proof of concept that makes someone's day measurably easier is worth ten slide decks about transformation. From there, momentum tends to build on its own.",
+    keys: ['change', 'adoption', 'people', 'resistance', 'rollout', 'embed', 'culture', 'stages', 'pilot'],
+    answer: "Change fails when it's done to people rather than with them. My approach follows seven stages: Discovery, Design, Build, Pilot, Training and Enablement, Go Live, and Embed and Close. I involve the teams who'll be affected from Discovery onwards - not just for buy-in but because they hold the real process knowledge. I try to show value fast through the Pilot stage: a proof of concept that makes someone's day measurably easier is worth ten slide decks about transformation. The Embed and Close stage is the one most people skip - which is exactly why change doesn't stick.",
     follow: ['Tell me about your AI adoption work', 'What are you looking for next?', 'Tell me about BuildOS']
   },
   {
     keys: ['wework', 'previous', 'background', 'career', 'history', 'experience', 'before', 'past role'],
-    answer: "I spent about four years at WeWork across increasingly senior roles - starting as a Programme Manager delivering complex workplace rollouts for enterprise clients, moving into Development Strategy and then Global Operations Director during a period of significant restructuring. WeWork was a masterclass in building systems that scale and rebuilding them when the organisation shifts underneath you. It gave me a deep foundation in operating under pressure and delivering through ambiguity.",
+    answer: "I spent almost seven years at WeWork across increasingly senior roles - starting as a Programme Manager delivering complex workplace rollouts for enterprise clients, moving into Development Strategy and then Global Operations Director during a period of significant restructuring. WeWork was a masterclass in building systems that scale and rebuilding them when the organisation shifts underneath you. It gave me a deep foundation in operating under pressure and delivering through ambiguity.",
     follow: ['Tell me about IWG', 'What are you most proud of?', 'What are you looking for next?']
   },
   {
@@ -754,18 +754,13 @@ const qa = [
   },
   {
     keys: ['proud', 'highlight', 'best', 'favourite', 'accomplishment', 'stand out'],
-    answer: "Probably BuildOS. Not because of the technical complexity - it wasn't that - but because it genuinely changed how a global team works. Watching people in different continents use a system I designed to make faster, better-informed decisions is satisfying in a way that's hard to replicate. The AI strategy work at IWG is a close second - the efficiency numbers were real and the team felt the difference.",
+    answer: "BuildOS, and everything that sits within it. It wasn't just a system build - it was a full operating model transformation: the architecture, the governance layer, the AI strategy built on top of it, and the Notion implementation that brought it all to life in one place. Watching a globally distributed team use something I designed from scratch to make faster, better-informed decisions - and then seeing the efficiency numbers come in at 20-30% uplift - that's the kind of work I want to keep doing. It's the closest thing I've built to a product.",
     follow: ['Tell me about BuildOS', 'Tell me about the AI strategy', 'What are you looking for next?']
   },
   {
     keys: ['looking for', 'next role', 'want', 'seeking', 'opportunity', 'job', 'position', 'open to', 'available'],
-    answer: "I'm looking for a senior operations or programme management role where the work genuinely matters - ideally in a company building something meaningful in AI or tooling. I want to be close to the product, working with people who care about how things are built, not just what gets built. I'm drawn to organisations where operational excellence is seen as a strategic advantage, not just a support function.",
-    follow: ['Why Anthropic?', 'What does your ideal role look like?', 'Tell me about your background']
-  },
-  {
-    keys: ['anthropic', 'why anthropic', 'why this company'],
-    answer: "Anthropic is building some of the most consequential technology of our time and taking the question of how to do that responsibly seriously. I've been using Claude in my work for over a year - not just as a tool but as a way of thinking about how AI changes operational workflows. I want to be on the inside of that, helping build the operational infrastructure that lets a mission like this actually execute at scale.",
-    follow: ['What would you bring to Anthropic?', 'Tell me about your AI experience', 'What are you looking for next?']
+    answer: "I'm looking for a senior operations or programme management role where the work genuinely matters - ideally in a company building something meaningful in AI or tooling. I want to be close to the product, working with people who care about how things are built, not just what gets built. I thrive in collaborative teams where speed is valued but never at the expense of accuracy or bringing people along with you - the best outcomes I've been part of came from moving fast and doing it properly. I'm drawn to organisations where operational excellence is seen as a strategic advantage, not just a support function.",
+    follow: ['What would you bring?', 'What does your ideal role look like?', 'Tell me about your background']
   },
   {
     keys: ['bring', 'offer', 'contribute', 'value', 'what can you', 'why you', 'why hire'],
@@ -775,11 +770,11 @@ const qa = [
   {
     keys: ['ideal role', 'dream job', 'perfect role', 'what do you want', 'what matters'],
     answer: "A role where I'm designing and running operational systems for something that matters, with access to the leadership who set the direction and the teams who do the work. Scale is important to me - I do my best work when the complexity is real. And I want to keep pushing on AI-enabled operations: this area is moving fast and I want to be at the front of it, not catching up.",
-    follow: ['Why Anthropic?', 'What are you looking for next?', 'Tell me about your background']
+    follow: ['What would you bring?', 'What are you looking for next?', 'Tell me about your background']
   },
   {
-    keys: ['tool', 'software', 'platform', 'stack', 'use', 'technology'],
-    answer: "For programme management and operating systems I've worked extensively with modern productivity and project platforms. On the AI side I've embedded Microsoft Copilot, Claude, ChatGPT Enterprise, and a range of AI-augmented design and document tools into operational workflows. I'm tool-agnostic in principle - I care about outcomes, not software loyalty - but I'm deeply hands-on and I don't believe in designing systems I haven't used myself.",
+    keys: ['tool', 'software', 'platform', 'stack', 'use', 'technology', 'notion', 'procore'],
+    answer: "I'm deeply hands-on with the tools I work with - I don't believe in designing systems I haven't used myself. On the programme and project side I've worked extensively with Notion and Procore, using them to build operational infrastructure rather than just track tasks. On the AI side I've embedded Claude and ChatGPT Enterprise into core delivery workflows, redesigning processes around them rather than just bolting them on. I'm tool-agnostic in principle - I care about outcomes, not software loyalty.",
     follow: ['Tell me about BuildOS', 'Tell me about your AI strategy work', 'What are you looking for next?']
   },
   {
@@ -789,10 +784,10 @@ const qa = [
   },
   {
     keys: ['hello', 'hi', 'hey', 'morning', 'afternoon', 'start', 'begin'],
-    answer: "Hi, great to meet you. I'm Ashley - I build operating systems for organisations and lead AI strategy at scale. Feel free to ask me anything about my work, experience, or what I'm looking for next. Or use the quick buttons below to get started.",
+    answer: "Hi, I'm Ashley. Use the buttons below to find out more about my work and experience - or type your own question if you'd prefer.",
     follow: ['What is BuildOS?', 'Tell me about your AI work', 'What are you looking for next?']
   }
-];
+]
 
 const fallbacks = [
   "Good question - that's not something I've pre-loaded an answer for, but I'd love to discuss it directly. Drop me an email at ashley.tyler.rst@gmail.com.",
