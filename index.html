@@ -827,14 +827,12 @@ function sendMessage() {
   if (!text) return;
   addMsg('user', text); input.value = ''; btn.disabled = true;
   const typing = addTyping();
-  try {
-    // Find best matching answer
-    const result = findAnswer(text);
-    setTimeout(() => {
-      typing.remove();
-      addMsg('ash', result.text, result.follow);
-      btn.disabled = false;
-    }, 600 + Math.random() * 400);
+  const result = findAnswer(text);
+  setTimeout(() => {
+    typing.remove();
+    addMsg('ash', result.text, result.follow);
+    btn.disabled = false;
+  }, 600 + Math.random() * 400);
 }
 
 function sendSuggestion(btn) { document.getElementById('chat-input').value = btn.textContent; sendMessage(); }
