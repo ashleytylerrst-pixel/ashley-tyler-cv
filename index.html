@@ -149,6 +149,7 @@
     z-index: 50;
   }
   .scroll-hint.hidden { opacity: 0 !important; pointer-events: none; transition: opacity 0.3s ease; }
+  @media (max-width: 640px) { .scroll-hint { display: none; } }
   .scroll-hint-text {
     font-size: 0.82rem; color: var(--text-secondary); letter-spacing: 0.05em;
     text-transform: uppercase; font-weight: 500;
