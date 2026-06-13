@@ -42,10 +42,11 @@
   /* HERO */
   .hero {
     min-height: 100vh; display: flex; flex-direction: column; justify-content: center;
-    padding: 7rem 2.5rem 6rem; max-width: 1100px; margin: 0 auto;
+    padding: 7rem 6vw 6rem; width: 100%;
   }
   .hero-inner {
-    display: grid; grid-template-columns: 1fr 1fr; gap: 4rem; align-items: center;
+    display: grid; grid-template-columns: 1fr 1fr; gap: 5vw; align-items: center;
+    max-width: 1200px; margin: 0 auto; width: 100%;
   }
   @media (max-width: 860px) {
     .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
@@ -167,7 +168,7 @@
   /* STATS */
   .stats-strip {
     background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
-    padding: 3rem 2.5rem;
+    padding: 3rem 6vw;
     display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 2rem;
     max-width: 100%;
   }
@@ -176,7 +177,7 @@
   .stat-label { font-size: 0.75rem; color: var(--muted); margin-top: 0.4rem; display: block; font-weight: 400; line-height: 1.4; }
 
   /* CONTENT WRAPPER */
-  .content-section { padding: 5rem 2.5rem; max-width: 900px; margin: 0 auto; }
+  .content-section { padding: 5rem 6vw; max-width: 1200px; margin: 0 auto; width: 100%; }
 
   .section-label { font-size: 0.75rem; font-weight: 500; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.6rem; }
   .section-title { font-size: clamp(1.6rem, 3vw, 2.2rem); font-weight: 700; letter-spacing: -0.025em; color: var(--text); margin-bottom: 2.5rem; line-height: 1.15; }
