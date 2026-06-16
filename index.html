@@ -262,6 +262,143 @@
   .footer-links a { color: var(--muted); text-decoration: none; font-size: 0.84rem; transition: color 0.2s; }
   .footer-links a:hover { color: var(--text); }
 
+  /* AI PIPELINE */
+  .ai-pipeline {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+    gap: 0;
+    align-items: stretch;
+    margin-bottom: 2rem;
+  }
+  @media (max-width: 768px) {
+    .ai-pipeline { grid-template-columns: 1fr; gap: 0.75rem; }
+    .ai-connector { display: none; }
+  }
+  .ai-phase {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.4rem;
+    position: relative;
+    transition: box-shadow 0.2s;
+    display: flex;
+    flex-direction: column;
+  }
+  .ai-phase:hover { box-shadow: 0 2px 16px rgba(0,0,0,0.07); }
+  .ai-phase-num {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: var(--faint);
+    letter-spacing: 0.08em;
+    margin-bottom: 0.75rem;
+    font-family: var(--font);
+  }
+  .ai-phase-num::before { content: "Phase "; }
+  .ai-phase-title {
+    font-size: 0.95rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+  }
+  .ai-phase-desc {
+    font-size: 0.8rem;
+    color: var(--muted);
+    line-height: 1.6;
+    flex: 1;
+  }
+  .ai-connector {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0 0.5rem;
+    gap: 2px;
+  }
+  .ai-connector-line {
+    width: 1px;
+    height: 0;
+    display: none;
+  }
+  .ai-connector-arrow {
+    font-size: 1rem;
+    color: var(--faint);
+    line-height: 1;
+  }
+  .ai-result {
+    display: flex;
+    align-items: baseline;
+    gap: 0.75rem;
+    padding: 1.2rem 1.4rem;
+    background: var(--surface2);
+    border-radius: 10px;
+    border: 1px solid var(--border);
+  }
+  .ai-result-num {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: var(--text);
+    letter-spacing: -0.03em;
+    white-space: nowrap;
+  }
+  .ai-result-text {
+    font-size: 0.88rem;
+    color: var(--muted);
+    line-height: 1.6;
+  }
+
+  /* 7Ps */
+  .seven-ps {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.6rem;
+    margin-bottom: 1.8rem;
+  }
+  @media (max-width: 900px) {
+    .seven-ps { grid-template-columns: repeat(2, 1fr); gap: 0.6rem; }
+  }
+  @media (max-width: 500px) {
+    .seven-ps { grid-template-columns: 1fr; }
+  }
+  .ps-item {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 1.2rem 1rem;
+    transition: box-shadow 0.2s;
+  }
+  .ps-item:hover { box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+  .ps-letter { display: none; }
+  .ps-content {}
+  .ps-title {
+    font-size: 0.88rem;
+    font-weight: 700;
+    color: var(--text);
+    margin-bottom: 0.5rem;
+    letter-spacing: -0.01em;
+  }
+  .ps-desc {
+    font-size: 0.77rem;
+    color: var(--muted);
+    line-height: 1.65;
+  }
+  .ps-callout {
+    background: var(--surface2);
+    border-left: 3px solid var(--border);
+    border-radius: 0 10px 10px 0;
+    padding: 1.2rem 1.4rem;
+  }
+  .ps-callout-quote {
+    font-size: 0.97rem;
+    color: var(--text-secondary);
+    line-height: 1.65;
+    font-style: italic;
+    font-weight: 500;
+  }
+
   /* REVEAL */
   .reveal { opacity: 0; transform: translateY(18px); transition: opacity 0.55s ease, transform 0.55s ease; }
   .reveal.visible { opacity: 1; transform: none; }
@@ -383,6 +520,127 @@
     <div>
       <p class="about-pullquote">"The operating model is the product. If you can't build, govern, and iterate on the system that runs the business - the strategy doesn't ship."</p>
     </div>
+  </div>
+</div>
+
+
+<div class="divider"></div>
+
+<!-- 7Ps SECTION -->
+<div class="content-section" id="7ps">
+  <div class="section-label reveal">Discovery Framework</div>
+  <h2 class="section-title reveal">The 7Ps, how I diagnose any organisation.</h2>
+  <p style="color:var(--muted);font-size:0.95rem;line-height:1.7;max-width:600px;margin-bottom:2.5rem;" class="reveal">Before designing any operating model, I run a structured discovery across seven dimensions. This surfaces what's actually broken, not just what looks broken on the surface. From there I identify the gaps, design the fixes, and sequence the implementation.</p>
+
+  <div class="seven-ps reveal">
+    <div class="ps-item">
+      <div class="ps-letter">P<span>1</span></div>
+      <div class="ps-content">
+        <div class="ps-title">People</div>
+        <div class="ps-desc">Capability, capacity, ownership clarity, and org design. Who does what, and does the structure reflect how work actually flows?</div>
+      </div>
+    </div>
+    <div class="ps-item">
+      <div class="ps-letter">P<span>2</span></div>
+      <div class="ps-content">
+        <div class="ps-title">Product</div>
+        <div class="ps-desc">What the organisation delivers: the output, the proposition, and whether delivery standards are defined and consistent.</div>
+      </div>
+    </div>
+    <div class="ps-item">
+      <div class="ps-letter">P<span>3</span></div>
+      <div class="ps-content">
+        <div class="ps-title">Process</div>
+        <div class="ps-desc">How work moves through the organisation. Where decisions stall, where handoffs break, and where the playbook is missing entirely.</div>
+      </div>
+    </div>
+    <div class="ps-item">
+      <div class="ps-letter">P<span>4</span></div>
+      <div class="ps-content">
+        <div class="ps-title">Platform</div>
+        <div class="ps-desc">The systems and tooling that underpin delivery. Are they fit for purpose, adopted, and aligned to the way the business actually operates?</div>
+      </div>
+    </div>
+    <div class="ps-item">
+      <div class="ps-letter">P<span>5</span></div>
+      <div class="ps-content">
+        <div class="ps-title">Partnership</div>
+        <div class="ps-desc">Vendor relationships, external dependencies, and governance frameworks. Who you work with and how that relationship is structured and managed.</div>
+      </div>
+    </div>
+    <div class="ps-item">
+      <div class="ps-letter">P<span>6</span></div>
+      <div class="ps-content">
+        <div class="ps-title">Prices</div>
+        <div class="ps-desc">Commercial model, cost structure, and financial governance. Whether the numbers reflect the operating reality and where margin is being lost.</div>
+      </div>
+    </div>
+    <div class="ps-item">
+      <div class="ps-letter">P<span>7</span></div>
+      <div class="ps-content">
+        <div class="ps-title">Performance</div>
+        <div class="ps-desc">How success is defined, measured, and reported. KPI frameworks, dashboards, and whether the right information reaches the right people at the right time.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="ps-callout reveal">
+    <div class="ps-callout-quote">"Most operating model problems present as execution failures. Working through all seven dimensions reveals the structural causes underneath."</div>
+  </div>
+</div>
+
+<div class="divider"></div>
+
+<!-- AI MATURITY MODEL -->
+<div class="content-section" id="ai-model">
+  <div class="section-label reveal">AI Strategy Framework</div>
+  <h2 class="section-title reveal">A four-phase model for AI-enabled operations.</h2>
+  <p style="color:var(--muted);font-size:0.95rem;line-height:1.7;max-width:600px;margin-bottom:2.5rem;" class="reveal">Designed and deployed at IWG across the global Design &amp; Construction function. Each phase is staged against foundations readiness, you can't automate what you haven't first standardised.</p>
+  <div class="ai-pipeline reveal">
+    <div class="ai-phase">
+      <div class="ai-phase-num">0</div>
+      <div class="ai-phase-content">
+        <div class="ai-phase-title">Knowledge &amp; Context</div>
+        <div class="ai-phase-desc">Foundations: plan of work, data spine, kit-of-parts, glossary. The layer everything else sits on.</div>
+      </div>
+    </div>
+    <div class="ai-connector">
+      <div class="ai-connector-line"></div>
+      <div class="ai-connector-arrow">→</div>
+    </div>
+    <div class="ai-phase">
+      <div class="ai-phase-num">1</div>
+      <div class="ai-phase-content">
+        <div class="ai-phase-title">Assist</div>
+        <div class="ai-phase-desc">AI assistants for designers, PMs, estimators, and procurement teams. Claude &amp; ChatGPT embedded into daily workflows.</div>
+      </div>
+    </div>
+    <div class="ai-connector">
+      <div class="ai-connector-line"></div>
+      <div class="ai-connector-arrow">→</div>
+    </div>
+    <div class="ai-phase">
+      <div class="ai-phase-num">2</div>
+      <div class="ai-phase-content">
+        <div class="ai-phase-title">Automate</div>
+        <div class="ai-phase-desc">Agentic workflows: BoQs, partner packs, design QA, procurement triggers. Repetitive tasks removed entirely.</div>
+      </div>
+    </div>
+    <div class="ai-connector">
+      <div class="ai-connector-line"></div>
+      <div class="ai-connector-arrow">→</div>
+    </div>
+    <div class="ai-phase">
+      <div class="ai-phase-num">3</div>
+      <div class="ai-phase-content">
+        <div class="ai-phase-title">Orchestrate</div>
+        <div class="ai-phase-desc">Cross-platform agents managing project flow under human approval. The target state, currently in design.</div>
+      </div>
+    </div>
+  </div>
+  <div class="ai-result reveal">
+    <span class="ai-result-num">~25%</span>
+    <span class="ai-result-text">efficiency uplift measured across delivery reporting, design review, vendor management and SOP creation through Phases 0 and 1 alone.</span>
   </div>
 </div>
 
