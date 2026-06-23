@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ashley Tyler - Operations & Architecture Leader</title>
@@ -421,7 +422,7 @@
     <a href="#experience">Experience</a>
     <a href="#skills">Skills</a>
     <a href="#home">Ask Ash</a>
-    <a href="mailto:ashley.tyler.rst@gmail.com">Contact</a>
+    <a href="#" class="email-link" data-user="ashley.tyler.rst" data-domain="gmail.com">Contact</a>
   </div>
 </nav>
 
@@ -439,7 +440,7 @@
       <p class="hero-bio">Global operations leader specialising in designing and scaling operating models for multi-site, fast-growth businesses. Currently leading AI strategy and adoption across a global team - embedding tools and redesigning workflows around them.</p>
       <div class="hero-ctas">
         <a href="#about" class="btn-primary">View my work</a>
-        <a href="mailto:ashley.tyler.rst@gmail.com" class="btn-secondary">Get in touch</a>
+        <a href="#" class="email-link" data-user="ashley.tyler.rst" data-domain="gmail.com" class="btn-secondary">Get in touch</a>
       </div>
     </div>
     <!-- RIGHT: Chat -->
@@ -893,7 +894,7 @@
     <p>Available for the right opportunity. Let's talk.</p>
   </div>
   <div class="footer-links">
-    <a href="mailto:ashley.tyler.rst@gmail.com">Email</a>
+    <a href="#" class="email-link" data-user="ashley.tyler.rst" data-domain="gmail.com">Email</a>
     <a href="https://www.linkedin.com/in/ashley-tyler-/" target="_blank">LinkedIn</a>
   </div>
 </footer>
@@ -1192,6 +1193,18 @@ function sendSuggestion(btn) { document.getElementById('chat-input').value = btn
 
 
 
+</script>
+<script>
+// EMAIL OBFUSCATION - builds addresses at runtime to deter scrapers
+window.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.email-link').forEach(el => {
+    const addr = el.dataset.user + '@' + el.dataset.domain;
+    el.href = 'mailto:' + addr;
+  });
+  document.querySelectorAll('.email-display').forEach(el => {
+    el.textContent = el.dataset.user + '@' + el.dataset.domain;
+  });
+});
 </script>
 </body>
 </html>
